@@ -35,6 +35,31 @@ namespace HajosTeszt
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+
+            
+        }
+
+        public void Configuree(IApplicationBuilder app, IWebHostEnvironment env) 
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseHttpsRedirection();
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello World!");
+            //    });
+            //});
+
         }
     }
 }
