@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .sor{
+            display:flex;
+            flex-direction:row;
+        }
+        .elem{
+
+            width:30px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="ide">.</div>
+    
+
+    <script>
+        let hova = document.getElementById("ide");
+        for (var s = 0; s < 10; s++) {
+            let sor = document.createElement("div"); //div létrehozása
+            sor.classList.add("sor")
+            hova.appendChild(sor) //hova gyeerekei közé beteszem a sort(sok üres div létrejött sorban chrome-ban látszik)
+
+            for (var o = 0; o < 10; o++) {
+                let szám = document.createElement("div");
+                szám.classList.add("elem")
+                szám.innerText = (s + 1) * (o + 1);
+                sor.appendChild(szám); //minden dievn belül lett 10 másik div              
+            }
+        }
+    </script>
+</body>
+</html>

@@ -32,29 +32,29 @@
 
         <style>
 
+            div{
+                margin:10px;
+            }
             * {
                 box-sizing: border-box;}
 
             html, body {
                 height: 100%;
             }
-
-            #egész {
-                
-            }
+            
             #külső {
                 height: 100%;
                 display: flex;
                 flex-direction: column;
+
                 border: 2px solid #8EA9DB;
                 background-color: #FFF2CC;
-                border-radius: 20px;
-                
-            }            
+                border-radius: 20px;                
+            }
+
             img{
                  width:100%;
-                 height:auto;
-                 margin-right:10px;
+                 height:auto;                 
             }
             
             #válasz1,
@@ -66,33 +66,22 @@
                 margin-left: 10px;
                 padding: 20px;
                 border-radius: 20px;
-                background-color: #FFF2CC;
-                margin-bottom: 10px;
-                margin-right: 10px;
+                background-color: #FFF2CC;                             
                 flex-wrap: wrap;
-
             }
             
             #kérdés_szöveg {
                 font-weight: bold;
                 margin-top:10px;
             }
-
-            #külső {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-
-            
-
+           
             #középső {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                flex-grow: 1;
             }
 
             #válaszok {
-
                 flex-grow: 1;
                 flex-shrink: 1;
             }
@@ -100,12 +89,6 @@
             #kép {
                 overflow:hidden;
                 flex-shrink: 1;
-            }
-
-            #középső {
-                display: flex;
-                flex-direction: row;
-                flex-grow: 1;
             }
 
             #vezérlő {
@@ -121,10 +104,7 @@
                 background-color: #8EA9DB;
                 border-radius: 20px;
                 text-align: center;
-                font-weight: bold;
-                margin-left:10px;
-                margin-right:10px;
-                margin-bottom:10px;
+                font-weight: bold;                            
             }
 
             .kattintható:hover {
@@ -134,15 +114,12 @@
 
             @media screen and (max-width: 800px) {
                 body {
-
                 }
-                #középső {
-                    flex-direction: row;
-
-                }
+                #kép{order:-1;}
                 #középső {
                     display: flex;
                     flex: 1 1 auto;
+                    flex-direction:column;                    
                 }
             }
         </style>
