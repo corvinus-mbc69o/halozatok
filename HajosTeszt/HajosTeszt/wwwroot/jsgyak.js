@@ -23,7 +23,7 @@ for (var s = 0; s < 10; s++) {
         elem.innerText = faktoriálisRn(s)/(faktoriálisRn(oszlop)*faktoriálisRn(s-oszlop))
         console.log(oszlop)
         sor.appendChild(elem);
-        elem.style.background=`rgb(${255/10*s},0,${255/10*oszlop})`
+        elem.style.color=`rgb(${255/10*s},0,${255/10*oszlop})`
     }   
 }
 }
