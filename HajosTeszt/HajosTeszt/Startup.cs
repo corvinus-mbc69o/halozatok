@@ -48,30 +48,30 @@ namespace HajosTeszt
 
             );
 
-            
+
         }
 
-        public void Configuree(IApplicationBuilder app, IWebHostEnvironment env) 
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            app.UseHttpsRedirection();
+        //public void Configuree(IApplicationBuilder app, IWebHostEnvironment env)
+        //{
+        //    if (env.IsDevelopment())
+        //    {
+        //        app.UseDeveloperExceptionPage();
+        //    }
+        //    app.UseHttpsRedirection();
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+        //    app.UseDefaultFiles();
+        //    app.UseStaticFiles();
 
-            app.UseRouting();
+        //    app.UseRouting();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
+        //    //app.UseEndpoints(endpoints =>
+        //    //{
+        //    //    endpoints.MapGet("/", async context =>
+        //    //    {
+        //    //        await context.Response.WriteAsync("Hello World!");
+        //    //    });
+        //    //});
 
         }
     }
-}
+

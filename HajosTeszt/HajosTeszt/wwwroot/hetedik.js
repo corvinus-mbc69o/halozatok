@@ -1,23 +1,21 @@
 ﻿var kérdések;
-var kérdésSzám = 0;
+var kérdésSzám = 1;
 
-function letöltés() {
-fetch("/question.json")
-    .then(response => response.json())
-        .then(data => letöltésBefejeződött(data));   
-}
-window.onload = letöltés();
-
-
-function letöltésBefejeződött(d) {
-    console.log("Sikeres letöltés")
-    console.log(d)
-    kérdések = d;
-    kérdésMegjelenítés(kérdések);
-}
+function kérdésBetöltés(id) {
+    fetch(`/questions/${id}`)
+        .then(response => {
+            if(!response.ok) {
+                console.error(`Hibás válasz : ${response.status}`)
+    }else {
+        return response.json()
+    }
+        })
+        .then(data => kérdésMegjelenítés(data));
+}    
 
 function kérdésMegjelenítés(kérdés) {
-    document.getElementById("kérdés_szöveg").innerHTML = kérdések[kérdésSzám].questionText;
+    console.log(kérdés);
+    document.getElementById("kérdés_szöveg").innerText = kérdések[kérdésSzám].questionText;
     document.getElementById("válasz1").innerHTML = kérdések[kérdésSzám].answer1;
     document.getElementById("válasz2").innerHTML = kérdések[kérdésSzám].answer2;
     document.getElementById("válasz3").innerHTML = kérdések[kérdésSzám].answer3;    
@@ -25,8 +23,9 @@ function kérdésMegjelenítés(kérdés) {
     
 }
 
+
 window.onload = function () {
-    letöltés();
+    kérdésBetöltés(kérdésSzám);
 
     document.getElementById("előre").onclick = function előreLép() {
         kérdésSzám++;
@@ -67,8 +66,7 @@ window.onload = function () {
 
     document.getElementById("válasz3").onclick = function válasz3Színezés() {
         if (kérdések[kérdésSzám].correctAnswer == 3) {
-            this.style.background = "darkgreen";
-            
+            this.style.background = "darkgreen";        
         }
         else {
             this.style.background = "lightcoral";
