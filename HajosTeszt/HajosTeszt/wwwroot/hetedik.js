@@ -14,6 +14,7 @@ function kérdésBetöltés(id) {
 }    
 
 function kérdésMegjelenítés(kérdés) {
+    if (!kérdés) return;
     console.log(kérdés);
     document.getElementById("kérdés_szöveg").innerText = kérdések[kérdésSzám].questionText;
     document.getElementById("válasz1").innerHTML = kérdések[kérdésSzám].answer1;

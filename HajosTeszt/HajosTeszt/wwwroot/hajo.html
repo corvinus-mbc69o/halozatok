@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="hetedik.js"></script>
+
+    <script src="tizedik.js"></script>
 </head>
 
     <body>
@@ -17,17 +18,17 @@
 
                 <div id="középső">
                     <div id="válaszok">
-                        <div id="válasz1" class="kerdes">Válasz 1</div>
-                        <div id="válasz2" class="kerdes">Válasz 2</div>
-                        <div id="válasz3" class="kerdes">Válasz 3</div>
+                        <div id="válasz1" onclick="választás(1)" class="kerdes kattintható">Válasz 1</div>
+                        <div id="válasz2" onclick="választás(2)" class="kerdes kattintható">Válasz 2</div>
+                        <div id="válasz3" onclick="választás(3)" class="kerdes kattintható">Válasz 3</div>
                     </div>
                     <div id="kép">
-                        <img id="kép1" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" alt="ez a teszkép" />
+                        <img id="kép1" src="" />
                     </div>
                 </div>
                 <div id="vezérlő">
-                    <div id="vissza" class="gomb kattintható">Vissza</div>
-                    <div id="előre" class="gomb kattintható">Előre</div>
+                    <div id="vissza_gomb" class="gomb kattintható">Vissza</div>
+                    <div id="előre_gomb" class="gomb kattintható">Előre</div>
                 </div>
             </div>
         </div>
@@ -114,6 +115,13 @@
                 color: white;
             }
 
+            .jó{
+                background-color:forestgreen;
+            }
+
+            .rossz {
+                background-color: red;
+            }
             @media screen and (max-width: 800px) {
                 body {
                 }
